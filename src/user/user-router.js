@@ -31,6 +31,8 @@ userRouter
 
       const hashedPassword = await  UserService.hashPassword(password)
 
+      console.log('hashed', hashedPassword);
+
       const newUser = {
         username,
         password: hashedPassword,
