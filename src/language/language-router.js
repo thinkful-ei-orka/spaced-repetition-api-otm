@@ -19,6 +19,7 @@ languageRouter
         })
 
       req.language = language
+
       next()
     } catch (error) {
       next(error)
