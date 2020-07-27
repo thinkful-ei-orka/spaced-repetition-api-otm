@@ -58,35 +58,56 @@ const UserService = {
         .first()
 
       const languageWords = [
-        ['entraine toi', 'practice', 2],
-        ['bonjour', 'hello', 3],
-        ['maison', 'house', 4],
-        ['développeur', 'developer', 5],
-        ['traduire', 'translate', 6],
-        ['incroyable', 'amazing', 7],
-        ['chien', 'dog', 8],
-        ['chat', 'cat', null],
+        ['Bonjour', 'hello', 2],
+        ['Au revoir', 'goodbye', 3],
+        ['Oui', 'yes', 4],
+        ['Non', 'no', 5],
+        ['Merci', 'thank you', 6],
+        ['Merci beaucoup', 'thank you very much', 7],
+        ['Fille', 'girl', 8],
+        ['Garcon', 'boy', 9],
+        ['Femme', 'woman', 10],
+        ['Homme', 'man', 11],
+        ['Amour', 'love', 12],
+        ['Francais', 'french', 13],
+        ['S&#39il vous plait', 'please', 14],
+        ['Bonsoir', 'good evening', 15],
+        ['Bonne Nuit', 'good evening', 16],
+        ['Excusez-moi', 'excuse me', 17],
+        ['De Rien', 'you&#39re welcome (casual)', 18],
+        ['Je vous en prie', 'you&#39re welcome (formal)', 19],
+        ['Temps', 'time', 20],
+        ['Jour', 'day', 21],
+        ['Monde', 'world', 22],
+        ['Monsieur', 'mister', 23],
+        ['Raison', 'reason', 24],
+        ['Madame', 'miss', 25],
+        ['Beau', 'handsome', 26],
+        ['Belle', 'beautiful', 27],
+        ['Chat', 'cat', 28],
+        ['Chien', 'dog', 29],
+        ['Fort', 'strong', null],
       ]
 
-      const [languageHeadId] = await trx
-        .into('word')
-        .insert(
-          languageWords.map(([original, translation, nextInc]) => ({
-            language_id: languageId.id,
-            original,
-            translation,
-            next: nextInc
-              ? Number(seq.last_value) + nextInc
-              : null
-          })),
-          ['id']
-        )
+const [languageHeadId] = await trx
+  .into('word')
+  .insert(
+    languageWords.map(([original, translation, nextInc]) => ({
+      language_id: languageId.id,
+      original,
+      translation,
+      next: nextInc
+        ? Number(seq.last_value) + nextInc
+        : null
+    })),
+    ['id']
+  )
 
-      await trx('language')
-        .where('id', languageId.id)
-        .update({
-          head: languageHeadId.id,
-        })
+await trx('language')
+  .where('id', languageId.id)
+  .update({
+    head: languageHeadId.id,
+  })
     })
   },
 }
