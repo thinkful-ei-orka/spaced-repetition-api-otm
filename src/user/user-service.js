@@ -72,7 +72,7 @@ const UserService = {
         ['Francais', 'french', 13],
         ['S&#39il vous plait', 'please', 14],
         ['Bonsoir', 'good evening', 15],
-        ['Bonne Nuit', 'good evening', 16],
+        ['Bonne Nuit', 'good night', 16],
         ['Excusez-moi', 'excuse me', 17],
         ['De Rien', 'you&#39re welcome (casual)', 18],
         ['Je vous en prie', 'you&#39re welcome (formal)', 19],
