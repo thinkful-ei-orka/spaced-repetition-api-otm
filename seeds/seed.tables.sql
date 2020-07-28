@@ -166,6 +166,9 @@ VALUES
   (116, 4, 'Fort', 'strong', null);
 
 UPDATE "language" SET head = 1 WHERE id = 1;
+UPDATE "language" SET head = 30 WHERE id = 2;
+UPDATE "language" SET head = 59 WHERE id = 3;
+UPDATE "language" SET head = 88 WHERE id = 4;
 
 -- because we explicitly set the id fields
 -- update the sequencer for future automatic id setting
