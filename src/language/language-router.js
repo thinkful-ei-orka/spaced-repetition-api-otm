@@ -65,12 +65,17 @@ languageRouter
 
     const { guess } = req.body;
 
-    // console.log(guess);
-
     const words = await LanguageService.getLanguageWords(
       req.app.get('db'),
       req.language.id,
     )
+
+    // console.log(guess);
+
+    // If the answer is correct, double the memory_value
+    // If the answer is incorrect, reset memory_value to 1
+    // Move the question back M places in the list
+    // Use a singly linked list
 
     res.send('implement me!')
   })
