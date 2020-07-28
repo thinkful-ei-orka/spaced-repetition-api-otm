@@ -3,6 +3,7 @@ const LanguageService = require('./language-service')
 const { requireAuth } = require('../middleware/jwt-auth')
 
 const languageRouter = express.Router()
+const jsonBodyParser = express.json()
 
 languageRouter
   .use(requireAuth)
@@ -51,7 +52,7 @@ languageRouter
   })
 
 languageRouter
-  .post('/guess', async (req, res, next) => {
+  .post('/guess', jsonBodyParser, async (req, res, next) => {
     try {
       for (const [key, value] of Object.entries(req.body)) {
         if (value == null || key !== 'guess') {
@@ -61,6 +62,10 @@ languageRouter
     } catch (e) {
       console.log(e);
     }
+
+    const { guess } = req.body;
+
+    // console.log(guess);
 
     const words = await LanguageService.getLanguageWords(
       req.app.get('db'),
