@@ -1,3 +1,6 @@
+-- to run this file enter the following:
+-- psql -d spaced-repetition -f ./seeds/seed.tables.sql
+
 BEGIN;
 
 TRUNCATE
@@ -38,7 +41,10 @@ VALUES
 
 INSERT INTO "language" ("id", "name", "user_id")
 VALUES
-  (1, 'French', 1);
+  (1, 'French', 1),
+  (2, 'French', 2),
+  (3, 'French', 3),
+  (4, 'French', 4);
 
 INSERT INTO "word" ("id", "language_id", "original", "translation", "next")
 VALUES
@@ -71,6 +77,93 @@ VALUES
   (27, 1, 'Chat', 'cat', 28),
   (28, 1, 'Chien', 'dog', 29),
   (29, 1, 'Fort', 'strong', null);
+  -- (30, 2, 'Bonjour', 'hello', ),
+  -- (31, 2, 'Au revoir', 'goodbye', ),
+  -- (, 2, 'Oui', 'yes', ),
+  -- (, 2, 'Non', 'no', ),
+  -- (, 2, 'Merci', 'thank you', ),
+  -- (, 2, 'Merci beaucoup', 'thank you very much', ),
+  -- (, 2, 'Fille', 'girl', ),
+  -- (, 2, 'Garcon', 'boy', ),
+  -- (, 2, 'Femme', 'woman', ),
+  -- (, 2, 'Homme', 'man', ),
+  -- (, 2, 'Amour', 'love', ),
+  -- (, 2, 'Francais', 'french', ),
+  -- (, 2, 'S&#39il vous plait', 'please', ),
+  -- (, 2, 'Bonsoir', 'good evening', ),
+  -- (, 2, 'Bonne Nuit', 'good evening', ),
+  -- (, 2, 'Excusez-moi', 'excuse me', ),
+  -- (, 2, 'De Rien', 'you&#39re welcome (casual)', ),
+  -- (, 2, 'Je vous en prie', 'you&#39re welcome (formal)', ),
+  -- (, 2, 'Temps', 'time', ),
+  -- (, 2, 'Jour', 'day', ),
+  -- (, 2, 'Monde', 'world', ),
+  -- (, 2, 'Monsieur', 'mister', ),
+  -- (, 2, 'Raison', 'reason', ),
+  -- (, 2, 'Madame', 'miss', ),
+  -- (, 2, 'Beau', 'handsome', ),
+  -- (, 2, 'Belle', 'beautiful', ),
+  -- (, 2, 'Chat', 'cat', ),
+  -- (, 2, 'Chien', 'dog', ),
+  -- (, 2, 'Fort', 'strong', null),
+  -- (, 3, 'Bonjour', 'hello', ),
+  -- (, 3, 'Au revoir', 'goodbye', ),
+  -- (, 3, 'Oui', 'yes', ),
+  -- (, 3, 'Non', 'no', ),
+  -- (, 3, 'Merci', 'thank you', ),
+  -- (, 3, 'Merci beaucoup', 'thank you very much', ),
+  -- (, 3, 'Fille', 'girl', ),
+  -- (, 3, 'Garcon', 'boy', ),
+  -- (, 3, 'Femme', 'woman', ),
+  -- (, 1, 'Homme', 'man', ),
+  -- (, 3, 'Amour', 'love', ),
+  -- (, 3, 'Francais', 'french', ),
+  -- (, 3, 'S&#39il vous plait', 'please', ),
+  -- (, 3, 'Bonsoir', 'good evening', ),
+  -- (, 3, 'Bonne Nuit', 'good evening', ),
+  -- (, 3, 'Excusez-moi', 'excuse me', ),
+  -- (, 3, 'De Rien', 'you&#39re welcome (casual)', ),
+  -- (, 3, 'Je vous en prie', 'you&#39re welcome (formal)', ),
+  -- (, 3, 'Temps', 'time', ),
+  -- (, 3, 'Jour', 'day', ),
+  -- (, 3, 'Monde', 'world', ),
+  -- (, 3, 'Monsieur', 'mister', ),
+  -- (, 3, 'Raison', 'reason', ),
+  -- (, 3, 'Madame', 'miss', ),
+  -- (, 3, 'Beau', 'handsome', ),
+  -- (, 3, 'Belle', 'beautiful', ),
+  -- (, 3, 'Chat', 'cat', ),
+  -- (, 3, 'Chien', 'dog', ),
+  -- (, 3, 'Fort', 'strong', null),
+  -- (, 4, 'Bonjour', 'hello', ),
+  -- (, 4, 'Au revoir', 'goodbye', ),
+  -- (, 4, 'Oui', 'yes', ),
+  -- (, 4, 'Non', 'no', ),
+  -- (, 4, 'Merci', 'thank you', ),
+  -- (, 4, 'Merci beaucoup', 'thank you very much', ),
+  -- (, 4, 'Fille', 'girl', ),
+  -- (, 4, 'Garcon', 'boy', ),
+  -- (, 4, 'Femme', 'woman', ),
+  -- (, 4, 'Homme', 'man', ),
+  -- (, 4, 'Amour', 'love', ),
+  -- (, 4, 'Francais', 'french', ),
+  -- (, 4, 'S&#39il vous plait', 'please', ),
+  -- (, 4, 'Bonsoir', 'good evening', ),
+  -- (, 4, 'Bonne Nuit', 'good evening', ),
+  -- (, 4, 'Excusez-moi', 'excuse me', ),
+  -- (, 4, 'De Rien', 'you&#39re welcome (casual)', ),
+  -- (, 4, 'Je vous en prie', 'you&#39re welcome (formal)', ),
+  -- (, 4, 'Temps', 'time', ),
+  -- (, 4, 'Jour', 'day', ),
+  -- (, 4, 'Monde', 'world', ),
+  -- (, 4, 'Monsieur', 'mister', ),
+  -- (, 4, 'Raison', 'reason', ),
+  -- (, 4, 'Madame', 'miss', ),
+  -- (, 4, 'Beau', 'handsome', ),
+  -- (, 4, 'Belle', 'beautiful', ),
+  -- (, 4, 'Chat', 'cat', ),
+  -- (, 4, 'Chien', 'dog', ),
+  -- (, 4, 'Fort', 'strong', null);
 
 UPDATE "language" SET head = 1 WHERE id = 1;
 
