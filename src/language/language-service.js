@@ -29,6 +29,32 @@ const LanguageService = {
       .where({ language_id })
   },
 
+  getLanguageWord(db, word_id) {
+    return db
+      .from('word')
+      .select(
+        'id',
+        'language_id',
+        'original',
+        'translation',
+        'next',
+        'memory_value',
+        'correct_count',
+        'incorrect_count',
+      )
+      .where({ id: word_id })
+  },
+
+  updateUsersLanguage(db, user_id, update) {
+    // console.log(update);
+    return db('language')
+      .update(update)
+      .where('user_id', user_id)
+  },
+
+  updateLanguageWord(db, word_id, update) {
+
+  }
 }
 
 module.exports = LanguageService
