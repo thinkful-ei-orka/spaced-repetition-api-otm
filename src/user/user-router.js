@@ -31,7 +31,8 @@ userRouter
 
       const hashedPassword = await  UserService.hashPassword(password)
 
-      console.log('hashed', hashedPassword);
+      // uncomment this to view a hashed password to add to the seed database
+      // console.log('hashed', hashedPassword);
 
       const newUser = {
         username,
