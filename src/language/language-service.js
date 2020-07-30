@@ -45,12 +45,12 @@ const LanguageService = {
       .where({ id: word_id })
   },
 
-  // updateUsersLanguage(db, user_id, update) {
-  //   // console.log(update);
-  //   return db('language')
-  //     .update(update)
-  //     .where('user_id', user_id);
-  // },
+  updateUsersLanguage(db, user_id, update) {
+    // console.log(update);
+    return db('language')
+      .update(update)
+      .where('user_id', user_id);
+  },
 
   updateLanguageWord(db, word_id, update) {
     return db('word')

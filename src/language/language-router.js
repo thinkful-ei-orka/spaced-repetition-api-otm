@@ -103,11 +103,11 @@ languageRouter
       head: head,
       total_score: total_score
     };
-    // LanguageService.updateUsersLanguage(
-    //   req.app.get('db'),
-    //   req.user.id,
-    //   languageUpdate
-    // );
+    await LanguageService.updateUsersLanguage(
+      req.app.get('db'),
+      req.user.id,
+      languageUpdate
+    );
 
     const words = await LanguageService.getLanguageWords(
       req.app.get('db'),
@@ -132,21 +132,21 @@ languageRouter
       incorrect_count: incorrect_count,
       next: nextNextWordId
     };
-    // LanguageService.updateLanguageWord(
-    //   req.app.get('db'),
-    //   wordId,
-    //   wordUpdate
-    // );
+    await LanguageService.updateLanguageWord(
+      req.app.get('db'),
+      wordId,
+      wordUpdate
+    );
 
     // update the word that comes before this word again
     let nextWordUpdate = {
       next: wordId
     };
-    // LanguageService.updateLanguageWord(
-    //   req.app.get('db'),
-    //   nextWordId,
-    //   nextWordUpdate
-    // );
+    await LanguageService.updateLanguageWord(
+      req.app.get('db'),
+      nextWordId,
+      nextWordUpdate
+    );
 
     console.log('wordId', wordId);
     console.log('wordUpdate', wordUpdate);
