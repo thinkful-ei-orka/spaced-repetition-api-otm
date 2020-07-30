@@ -153,7 +153,7 @@ languageRouter
     console.log('nextWordId', nextWordId);
     console.log('nextWordUpdate', nextWordUpdate);
 
-    res.send('implement me!')
+    res.json({wordId, wordUpdate, nextWordId, nextWordUpdate})
   })
 
 module.exports = languageRouter
