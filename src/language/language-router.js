@@ -53,11 +53,19 @@ languageRouter
         req.language.id,
       );
 
+      const language = await LanguageService.getUsersLanguage(
+        req.app.get('db'),
+        req.user.id,
+      )
+
       const head = req.language.head;
       word = words.filter(word => word.id === head)[0];
 
       res.json({
-        word,
+        nextWord: word.original,
+        totalScore: language.total_score,
+        wordCorrectCount: word.correct_count,
+        wordIncorrectCount: word.incorrect_count,
       });
     } catch (error) {
       console.log(error)
@@ -71,7 +79,7 @@ languageRouter
     for (const field of ['wordId', 'guess']) {
       if (!req.body[field]) {
         return res.status(400).json({
-          error: `Missing '${field}' in request body`
+          error: `Missing 'guess' in request body`
         })
       }
     }
