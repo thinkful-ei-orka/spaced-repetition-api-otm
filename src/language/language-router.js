@@ -74,9 +74,10 @@ languageRouter
 
 languageRouter
   .post('/guess', jsonBodyParser, async (req, res, next) => {
-    const { wordId, guess } = req.body
+    const { guess } = req.body
+    const wordId = req.language.head;
 
-    for (const field of ['wordId', 'guess']) {
+    for (const field of ['guess']) {
       if (!req.body[field]) {
         return res.status(400).json({
           error: `Missing 'guess' in request body`
@@ -156,10 +157,10 @@ languageRouter
       nextWordUpdate
     );
 
-    console.log('wordId', wordId);
-    console.log('wordUpdate', wordUpdate);
-    console.log('nextWordId', nextWordId);
-    console.log('nextWordUpdate', nextWordUpdate);
+    // console.log('wordId', wordId);
+    // console.log('wordUpdate', wordUpdate);
+    // console.log('nextWordId', nextWordId);
+    // console.log('nextWordUpdate', nextWordUpdate);
 
     res.json({ wordId, wordUpdate, nextWordId, nextWordUpdate })
     //Chris said we don't need wordId
