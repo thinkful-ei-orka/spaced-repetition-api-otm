@@ -161,7 +161,8 @@ languageRouter
     console.log('nextWordId', nextWordId);
     console.log('nextWordUpdate', nextWordUpdate);
 
-    res.json({wordId, wordUpdate, nextWordId, nextWordUpdate})
+    res.json({ wordId, wordUpdate, nextWordId, nextWordUpdate })
+    //Chris said we don't need wordId
   })
 
 module.exports = languageRouter
