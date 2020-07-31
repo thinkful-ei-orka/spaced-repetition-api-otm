@@ -10,7 +10,7 @@ const LanguageService = {
         'language.total_score'
       )
       .where('language.user_id', user_id)
-      .first()
+      .first();
   },
 
   getLanguageWords(db, language_id) {
@@ -26,7 +26,7 @@ const LanguageService = {
         'correct_count',
         'incorrect_count'
       )
-      .where({ language_id })
+      .where({ language_id });
   },
 
   getLanguageWord(db, word_id) {
@@ -42,7 +42,7 @@ const LanguageService = {
         'correct_count',
         'incorrect_count'
       )
-      .where({ id: word_id })
+      .where({ id: word_id });
   },
 
   updateUsersLanguage(db, user_id, update) {
@@ -57,6 +57,6 @@ const LanguageService = {
       .update(update)
       .where('id', word_id);
   }
-}
+};
 
 module.exports = LanguageService;
