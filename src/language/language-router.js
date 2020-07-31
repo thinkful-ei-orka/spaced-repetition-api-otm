@@ -62,10 +62,11 @@ languageRouter
       word = words.filter(word => word.id === head)[0];
 
       res.json({
-        nextWord: word.original,
-        totalScore: language.total_score,
-        wordCorrectCount: word.correct_count,
-        wordIncorrectCount: word.incorrect_count,
+        word,
+        // nextWord: word.original,
+        // totalScore: language.total_score,
+        // wordCorrectCount: word.correct_count,
+        // wordIncorrectCount: word.incorrect_count,
       });
     } catch (error) {
       console.log(error)
