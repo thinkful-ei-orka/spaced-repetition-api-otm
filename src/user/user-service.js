@@ -42,9 +42,9 @@ const UserService = {
     }
   },
   populateUserWords(db, user_id) {
-    console.log('adding words');
+    // console.log('adding words');
     return db.transaction(async trx => {
-      console.log('adding language');
+      // console.log('adding language');
       const [languageId] = await trx
         .into('language')
         .insert([
@@ -91,7 +91,7 @@ const UserService = {
         ['Fort', 'strong', null],
       ]
 
-      console.log('adding words');
+      // console.log('adding words');
 const [languageHeadId] = await trx
   .into('word')
   .insert(
@@ -106,7 +106,7 @@ const [languageHeadId] = await trx
     ['id']
   )
 
-  console.log('updating head');
+  // console.log('updating head');
 await trx('language')
   .where('id', languageId.id)
   .update({
