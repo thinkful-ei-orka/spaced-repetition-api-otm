@@ -63,11 +63,8 @@ languageRouter
 
       res.json({
         word,
-        // nextWord: word.original,
-        // totalScore: language.total_score,
-        // wordCorrectCount: word.correct_count,
-        // wordIncorrectCount: word.incorrect_count,
-      });
+      })
+
     } catch (error) {
       console.log(error)
     }
@@ -163,7 +160,8 @@ languageRouter
     // console.log('nextWordId', nextWordId);
     // console.log('nextWordUpdate', nextWordUpdate);
 
-    res.json({wordId, wordUpdate, nextWordId, nextWordUpdate})
+    res.json({ wordId, wordUpdate, nextWordId, nextWordUpdate })
+    //Chris said we don't need wordId
   })
 
 module.exports = languageRouter
