@@ -63,11 +63,8 @@ languageRouter
 
       res.json({
         word,
-        // nextWord: word.original,
-        // totalScore: language.total_score,
-        // wordCorrectCount: word.correct_count,
-        // wordIncorrectCount: word.incorrect_count,
-      });
+      })
+
     } catch (error) {
       console.log(error)
     }
