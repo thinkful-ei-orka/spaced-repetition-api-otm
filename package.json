@@ -1,5 +1,5 @@
 {
-  "name": "express-boilerplate",
+  "name": "spaced-repetition-api-otm",
   "version": "0.0.1",
   "description": "",
   "main": "src/server.js",
@@ -10,8 +10,9 @@
     "migrate:test": "env NODE_ENV=test npm run migrate",
     "migrate:production": "heroku run npm run migrate",
     "start": "node src/server.js",
-    "predeploy": "npm audit",
-    "deploy": "git push heroku master"
+    "predeploy": "npm audit && npm run migrate:production",
+    "deploy": "git push heroku master",
+    "postdeploy": "npm run migrate:production"
   },
   "keywords": [],
   "author": "Tom `tomatao` HT <tomht@thinkful.com>",
@@ -23,11 +24,11 @@
     "express": "^4.16.4",
     "helmet": "^3.15.0",
     "jsonwebtoken": "^8.5.0",
-    "postgrator-cli": "^3.1.0",
     "knex": "^0.16.3",
     "morgan": "^1.9.1",
     "pg": "^7.8.2",
-    "xss": "^1.0.8"
+    "postgrator-cli": "^4.0.0",
+    "postgres": "^1.0.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
