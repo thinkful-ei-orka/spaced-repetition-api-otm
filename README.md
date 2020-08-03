@@ -1,52 +1,17 @@
-# Spaced repetition API!
+[Link to server repo](https://github.com/thinkful-ei-orka/spaced-repetition-otm) <br> [Link to the live app](https://spaced-repetition-otm.vercel.app/register)
 
-## Local dev setup
+# Spaced Repetition Learning
 
-If using user `dunder_mifflin`:
+Spaced Repetition Learning is an evidence based method to learn a new skill.
+This app is designed to teach users French by applying the spaced repetition algorithm. 
 
-```bash
-mv example.env .env
-createdb -U dunder_mifflin spaced-repetition
-createdb -U dunder_mifflin spaced-repetition-test
-```
+## Tech/Frameworks Utilized:
+React, Node.js, PostgreSQL
 
-If your `dunder_mifflin` user has a password be sure to set it in `.env` for all appropriate fields. Or if using a different user, update appropriately.
+## Screenshots <br>
+<img src="./Screenshots/sign-up.jpg" width="300"> <img src="./Screenshots/dashboard.jpg" width="300"> <img src="./Screenshots/learning-page.jpg" width="300"> <img src="./Screenshots/correct-page.jpg" width="300"> <img src="./Screenshots/incorrect-page.jpg" width="300">
 
-```bash
-npm install
-npm run migrate
-env MIGRATION_DB_NAME=spaced-repetition-test npm run migrate
-```
-
-And `npm test` should work at this point
-
-## Configuring Postgres
-
-For tests involving time to run properly, configure your Postgres database to run in the UTC timezone.
-
-1. Locate the `postgresql.conf` file for your Postgres installation.
-   1. E.g. for an OS X, Homebrew install: `/usr/local/var/postgres/postgresql.conf`
-   2. E.g. on Windows, _maybe_: `C:\Program Files\PostgreSQL\11.2\data\postgresql.conf`
-   3. E.g  on Ubuntu 18.04 probably: '/etc/postgresql/10/main/postgresql.conf'
-2. Find the `timezone` line and set it to `UTC`:
-
-```conf
-# - Locale and Formatting -
-
-datestyle = 'iso, mdy'
-#intervalstyle = 'postgres'
-timezone = 'UTC'
-#timezone_abbreviations = 'Default'     # Select the set of available time zone
-```
-
-## Scripts
-
-Start the application `npm start`
-
-Start nodemon for the application `npm run dev`
-
-Run the tests mode `npm test`
-
-Run the migrations up `npm run migrate`
-
-Run the migrations down `npm run migrate -- 0`
+## Contributors:
+### Magdalena Painter
+### Orkun Ozekin
+### Taeil Kwak
