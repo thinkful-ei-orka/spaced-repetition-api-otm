@@ -40,16 +40,19 @@ userRouter
         name,
       }
 
+      // onsole.log('inserting user');
       const user = await UserService.insertUser(
         req.app.get('db'),
         newUser
       )
 
+      // console.log('populating words');
       await UserService.populateUserWords(
         req.app.get('db'),
         user.id
       )
 
+      // console.log('done adding user');
       res
         .status(201)
         .location(path.posix.join(req.originalUrl, `/${user.id}`))
